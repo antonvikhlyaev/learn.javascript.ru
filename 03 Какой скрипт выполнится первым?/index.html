@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript.ru | решение задач</title>
+</head>
+
+<body>
+
+  <h1>Какой скрипт выполнится первым?</h1>
+  <p>В примере ниже подключены два скрипта small.js и big.js.</p>
+  <p>Если предположить, что small.js загружается гораздо быстрее, чем big.js – какой выполнится первым?</p>
+  <pre>
+    script src="big.js"
+    script src="small.js"
+  </pre>
+  <p><b>Ответ: </b>сначала big.js, затем small.js по стандартной последовательности загрузки скриптов.</p>
+  <p>А вот так?</p>
+  <pre>
+    script async src="big.js"
+    script async src="small.js"
+  </pre>
+  <p><b>Ответ:</b> сначала small.js, затем big.js потому, что скрипты загружаются асинхронно и первым будет тот, кто
+    загрузился быстрее.</p>
+  <p>А так?</p>
+  <pre>
+    script defer src="big.js"
+    script defer src="small.js"
+  </pre>
+  <p><b>Ответ:</b> сначала big.js, потом small.js. С атрибутом defer порядок загрузки скриптов сохраняется, независимо
+    от скорости загрузки.</p>
+
+</body>
+
+</html>
